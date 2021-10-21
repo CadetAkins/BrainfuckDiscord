@@ -20,7 +20,7 @@ with open(file, 'r+') as f:
       continue
       
       
- with open(file, 'r+') as f:
+with open(file, 'r+') as f:
   file_string = f.read()
   for x in functions:
     file_string.replace(x[0], x[1])
@@ -32,4 +32,4 @@ with open(file, 'r+') as f:
 
 # $function_name | >+++++++++[<++++++++>-]<.      prints ASCII value for H (line does not execute until called.)
 #
-#$function_name                                   calls function to print 
+# $function_name                                   calls function to print 
