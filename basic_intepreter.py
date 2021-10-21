@@ -24,7 +24,7 @@ with open(file, 'r+') as f:
   for x in functions:
     file_string = file_string.replace(x[0], x[1])
 
-print("\nOUTPUT:\n\t" + file_string)
+print("\nOUTPUT:\n\t" + file_string.replace(";", "") # remove semicolons so as to not mess with systemf tokenizer
     
 #Example Code
 
