@@ -1,33 +1,32 @@
 # A basic interpreter to add functions to systemf brainfuck
 # Python 3.8
 
-file = input()
+file = input("Input file to be interpreted\n")
 with open(file, 'r+') as f:
   functions = []
-  i = 0
+  y = 1
   lines = f.read().replace(" ", "").replace("\n", "").replace("\t", "").split(";")
-  for i in lines: 
+  print(lines)
+  file_string = ""
+  for i in lines:
     if i.startswith("$"):
-      if len(i.split) > 1: #makes sure it isn't just a function call
-        functions.append([i.split("|")[0], i.split("|")[1]], i) # store lines number for possible future debug purposes
-        lines.remove(i)
-        i += 1
+      if len(i.split("|")) == 2: #makes sure it isn't just a function call
+        functions.append([i.split("|")[0], i.split("|")[1], y]) # store lines number for possible future debug purposes
+        y += 1
       else:
-        i += 1
+        file_string+=i
+        y += 1
         continue
     else:
-      i += 1
+      file_string+=i
+      y += 1
       continue
-      
-      
-with open(file, 'r+') as f:
-  file_string = f.read()
-  for x in functions:
-    file_string.replace(x[0], x[1])
-    
-   
-      
 
+  for x in functions:
+    file_string = file_string.replace(x[0], x[1])
+
+print(file_string)
+    
 #Example Code
 
 # $function_name | >+++++++++[<++++++++>-]<.      prints ASCII value for H (line does not execute until called.)
