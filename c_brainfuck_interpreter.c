@@ -40,6 +40,8 @@ void interpret(char* input) {
                     loop++;
                 }
             }
+        } else f (current_char == "$") {
+         
         }
     }
 }
