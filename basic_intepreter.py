@@ -15,7 +15,7 @@ with open(file, 'r+') as f:
       else:
         i += 1
         continue
-     else:
+    else:
       i += 1
       continue
       
