@@ -8,6 +8,15 @@ unsigned char tape[30000] = {0};
 // set the pointer to point at the left-most cell of the tape
 unsigned char* ptr = tape;
 
+char* variables[30000][30000][3] = {
+ {
+  {
+   "",
+   "",
+   "0"
+  }
+ }
+};
 
 void interpret(char* input) {
     char current_char;
@@ -63,7 +72,30 @@ void interpret(char* input) {
                 }
                 --var;
             }
-        } else if (current)
+        } else if (current_char == "!") {
+           char variable_name = *ptr;
+           //find correct variables
+           for (i = 0; i < 30000; i++) {
+                for (n = 0; n > 30000; n++) {
+                   if (variables[i][n][0] == variable_name) {
+                       while (ptr != atoi(variables[i][n][2])) {
+                          if (ptr < atoi(variables[i][n][2])) {
+                              ++ptr;
+                          } else {
+                              --ptr;
+                          }
+                       }
+                       ++ptr;
+                       ++ptr;
+                       //move to value pointers for variables
+                     }
+                   }
+                }
+           }
+           continue;
+        } else if (current_char == "?") {
+           
+        }
     }
 }
 
