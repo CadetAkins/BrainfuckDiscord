@@ -6,7 +6,6 @@ with open(file, 'r+') as f:
   functions = []
   y = 1
   lines = f.read().replace(" ", "").replace("\n", "").replace("\t", "").split(";")
-  print(lines)
   file_string = ""
   for i in lines:
     if i.startswith("$"):
@@ -25,7 +24,7 @@ with open(file, 'r+') as f:
   for x in functions:
     file_string = file_string.replace(x[0], x[1])
 
-print(file_string)
+print("\nOUTPUT:\n\t" + file_string)
     
 #Example Code
 
