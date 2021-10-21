@@ -40,8 +40,28 @@ void interpret(char* input) {
                     loop++;
                 }
             }
-        } else f (current_char == "$") {
-         
+        } else if (current_char == "$") {
+            var = 1;
+            unsigned char* string = "";
+            while (var > 0) {
+                current_char = input[++i];
+                if (current_char == "0") {
+                   variable_type = "str";
+                }
+                else if (current_char == "1") {
+                   variable_type = "int";
+                }
+                else if (current_char == "2") {
+                   variable_name = "float"
+                }
+                int next_char = atoi(input[++i]);
+                while (next_char > 0) {
+                   unsigned char* str_char = input[++i];
+                   string = strncat(str_char);
+                   --next_char;
+                }
+                --var;
+            }
         }
     }
 }
