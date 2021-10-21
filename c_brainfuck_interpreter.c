@@ -56,13 +56,13 @@ void interpret(char* input) {
                 }
                 int next_char = atoi(input[++i]);
                 while (next_char > 0) {
-                   unsigned char* str_char = input[++i];
-                   string = strncat(str_char);
+                   current_char = input[++i];
+                   string = strncat(string, current_char);
                    --next_char;
                 }
                 --var;
             }
-        }
+        } else if (current)
     }
 }
 
