@@ -44,19 +44,20 @@ void interpret(char* input) {
             var = 1;
             unsigned char* string = "";
             while (var > 0) {
-                current_char = input[++i];
-                if (current_char == "0") {
+                ++*ptr;
+                if (*ptr == "0") {
                    variable_type = "str";
                 }
-                else if (current_char == "1") {
+                else if (*ptr == "1") {
                    variable_type = "int";
                 }
-                else if (current_char == "2") {
+                else if (*ptr == "2") {
                    variable_name = "float"
                 }
-                int next_char = atoi(input[++i]);
+                ++*ptr;
+                int next_char = atoi(*ptr)
                 while (next_char > 0) {
-                   current_char = input[++i];
+                   current_char = ++*ptr;
                    string = strncat(string, current_char);
                    --next_char;
                 }
