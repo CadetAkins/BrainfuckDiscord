@@ -115,7 +115,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     with open(sys.argv[1]) as f:
-        lines = [line.strip() for line in f.readlines()]
+        lines = [line.strip() for line in f.split(";")]
 
         filtered = [re.sub('[^+-[\],.<>:;^v]', '', line) for line in lines]
         functions = [Function(function) for function in filtered]
