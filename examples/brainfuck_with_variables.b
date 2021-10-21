@@ -11,7 +11,3 @@
 >>>>>>>>>                       move to cell 9
 >+++++++++[<++++++++>-]<        set cell value to "H"
 !.>.>.>.>.?                     call variable H in cell
-  
-excepected output:
-  HHHHH
-  
